@@ -24,10 +24,10 @@ class TestGame(TestCase):
         self.assert_illegal_argument("121")
 
     def test_return_solve_result_if_matched_number(self):
-        self.game_question = "123"
+        self.game.question = "123"
         result: GameResult = self.game.guess("123")
 
         self.assertIsNotNone(result)
-        self.assertTrue(result.solved)
-        self.assertEqual(3, result.strikes)
-        self.assertEqual(0, result.balls)
+        self.assertTrue(result.get_solved())
+        self.assertEqual(3, result.get_strikes())
+        self.assertEqual(0, result.get_ball())
