@@ -9,6 +9,8 @@ class Game:
         self.assertIllegalValue(guessNumber)
         if guessNumber == self.question:
             return GameResult(True, 3, 0)
+        else:
+            return GameResult(False, 0, 0)
 
     def assertIllegalValue(self, guessNumber):
         if guessNumber is None:
